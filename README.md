@@ -1,0 +1,3 @@
+Finstatement-Scraping: Automate financial statement retrieval with ease. Effortlessly extract balance sheets, income statements, and cash flow statements from websites. Streamlined web scraping, data parsing, and customizable parameters. Export data in multiple formats. Efficient and scalable for large-scale tasks. Documentation and community support available. Simplify financial analysis and decision-making.
+
+I particularly use this for company valuation. Will convert this into a small desktop app :)
