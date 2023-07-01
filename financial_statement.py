@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 from xlsxwriter import Workbook
+import os
 
 headers= {
     'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0',
@@ -15,16 +16,28 @@ headers= {
 ticker = 'AI'
 
 urls = {}
-urls['income annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/"
-urls['income quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/?period=quarterly"
-urls['balance sheet annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/balance-sheet/"
-urls['balance sheet quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/balance-sheet/?period=quarterly"
-urls['cash flow annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/cash-flow-statement/"
-urls['cash flow quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/cash-flow-statement/?period=quarterly"
-urls['ratio annually'] = f"https://stockanalysis.com/stocks/aapl/financials/ratios/"
-urls['ratio quarterly'] = f"https://stockanalysis.com/stocks/aapl/financials/ratios/?period=quarterly"
+urls['Income Annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/"
+urls['Income Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/?period=quarterly"
+urls['Balance Sheet Annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/balance-sheet/"
+urls['Balance Sheet Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/balance-sheet/?period=quarterly"
+urls['Cash Flow Annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/cash-flow-statement/"
+urls['Cash Flow Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/cash-flow-statement/?period=quarterly"
+urls['Ratio Annually'] = f"https://stockanalysis.com/stocks/aapl/financials/ratios/"
+urls['Ratio Quarterly'] = f"https://stockanalysis.com/stocks/aapl/financials/ratios/?period=quarterly"
 
-xlwriter = pd.ExcelWriter(f'{ticker}-finstatement.xlsx', engine='xlsxwriter')
+# Get the current script's directory
+current_directory = os.getcwd()
+
+# Specify the relative directory
+relative_directory = os.path.join(current_directory, '..', 'Financial Statements')
+
+# Make sure the directory exists
+os.makedirs(relative_directory, exist_ok=True)
+
+# Create the file path
+file_path = os.path.join(relative_directory, f'{ticker}-finstatement.xlsx')
+
+xlwriter = pd.ExcelWriter(file_path, engine='xlsxwriter')
 
 for key in urls.keys():
     response = requests.get(urls[key], headers=headers)
