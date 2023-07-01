@@ -14,9 +14,9 @@ headers= {
 }
 
 # Ticker Symbol (US Stock Market only). 
-# Remember to make it all lowercase because the website only is case sensitive. 
-# You will get redirected to the annual statement page instead of the quarterly statement page if you don't make it all lowercase.
-ticker = 'ai'.lower()
+# The .lower() is to make sure the ticker symbol is in lowercase. 
+# Otherwise, you will get redirected to the annual statement page instead of the quarterly statement page if you don't make it all lowercase.
+ticker = 'DIS'.lower()
 
 #Folder path to save the excel file (modify accordingly to your preference)
 folderpath = 'Financial Statements'
