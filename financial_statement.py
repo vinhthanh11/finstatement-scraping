@@ -13,7 +13,7 @@ headers= {
     'Cache-Control': 'max-age=0'
 }
 
-ticker = 'AI'
+ticker = 'PLTR'
 folderpath = 'Financial Statements'
 
 urls = {}
@@ -45,5 +45,15 @@ for key in urls.keys():
     soup = BeautifulSoup(response.content, 'html.parser')
     df = pd.read_html(str(soup), attrs={'data-test': 'financials'})[0]
     df.to_excel(xlwriter, sheet_name=key, index=False)
+
+### Adjust the column widths to fit the longest string in the column. Remove if not needed.
+    worksheet = xlwriter.sheets[key]  # pull worksheet object
+    for idx, col in enumerate(df):  # loop through all columns
+        series = df[col]
+        max_len = max((
+            series.astype(str).map(len).max(),  # len of largest item
+            len(str(series.name))  # len of column name/header
+            )) + 1  # adding a little extra space
+        worksheet.set_column(idx, idx, max_len)  # set column width
 
 xlwriter.close()
