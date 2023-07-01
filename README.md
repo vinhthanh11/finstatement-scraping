@@ -1,6 +1,6 @@
 ## Financial Statements Scraper
 
-This code is a Python script that scrapes financial statements from the website stockanalysis.com for a given stock ticker symbol (limited to the US stock market). It retrieves the following financial statements for a specified stock:
+This code is a Python script that scrapes financial statements from the website stockanalysis.com for a given stock ticker symbol (limited to the **US stock market**). It retrieves the following financial statements for a specified stock:
 
 - Income Statement: Annually and Quarterly (the most recent available)
 - Balance Sheet: Annually and Quarterly (the most recent available)
