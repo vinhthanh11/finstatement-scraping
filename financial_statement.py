@@ -14,20 +14,20 @@ headers= {
 }
 
 #Ticker Symbol (US Stock Market only)
-ticker = 'DIS'
+ticker = 'AI'
 
 #Folder path to save the excel file (modify accordingly to your preference)
 folderpath = 'Financial Statements'
 
 urls = {}
 urls['Income Annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/"
-urls['Income Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/?period=quarterly"
+urls['Income Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/?p=quarterly"
 urls['Balance Sheet Annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/balance-sheet/"
-urls['Balance Sheet Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/balance-sheet/?period=quarterly"
+urls['Balance Sheet Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/balance-sheet/?p=quarterly"
 urls['Cash Flow Annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/cash-flow-statement/"
-urls['Cash Flow Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/cash-flow-statement/?period=quarterly"
-urls['Ratio Annually'] = f"https://stockanalysis.com/stocks/aapl/financials/ratios/"
-urls['Ratio Quarterly'] = f"https://stockanalysis.com/stocks/aapl/financials/ratios/?period=quarterly"
+urls['Cash Flow Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/cash-flow-statement/?p=quarterly"
+urls['Ratio Annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/ratios/"
+urls['Ratio Quarterly'] = f"https://stockanalysis.com/stocks/{ticker}/financials/ratios/?p=quarterly"
 
 # Get the current script's directory
 current_directory = os.getcwd()
