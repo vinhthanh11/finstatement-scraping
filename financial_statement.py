@@ -13,7 +13,10 @@ headers= {
     'Cache-Control': 'max-age=0'
 }
 
+#Ticker Symbol (US Stock Market only)
 ticker = 'DIS'
+
+#Folder path to save the excel file (modify accordingly to your preference)
 folderpath = 'Financial Statements'
 
 urls = {}
