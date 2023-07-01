@@ -13,7 +13,7 @@ headers= {
     'Cache-Control': 'max-age=0'
 }
 
-ticker = 'PLTR'
+ticker = 'AI'
 folderpath = 'Financial Statements'
 
 urls = {}
@@ -55,5 +55,34 @@ for key in urls.keys():
             len(str(series.name))  # len of column name/header
             )) + 1  # adding a little extra space
         worksheet.set_column(idx, idx, max_len)  # set column width
+
+    # Create a number format for cells with numbers.
+    num_format = xlwriter.book.add_format({'num_format': '#,##0.00'})
+    # Create a percentage format for cells with percentages.
+    percent_format = xlwriter.book.add_format({'num_format': '0.00%'})
+
+    # Iterate over the data and write it out row by row.
+    for row_num, value in enumerate(series.values):
+        try:
+            # Check if the value ends with a '%' symbol
+            if str(value).endswith('%'):
+                # If yes, remove the '%' symbol and convert the value to a float
+                value = float(value.replace('%', ''))
+
+                # Then, divide by 100 to convert the percentage to a decimal
+                value = value / 100
+
+                # Write the value to the Excel file, using the percentage format
+                worksheet.write(row_num+1, idx, value, percent_format)
+            else:
+                # If not, simply convert the value to a float
+                value = float(value)
+
+                # Write the value to the Excel file, using the number format
+                worksheet.write(row_num+1, idx, value, num_format)
+        except ValueError:
+            # If a ValueError occurs, this means that the value could not be converted to a float
+            # In this case, simply pass to the next value
+            pass
 
 xlwriter.close()
