@@ -1,6 +1,6 @@
 ## Financial Statements Scraper
 
-This code is a Python script that scrapes financial statements from the website stockanalysis.com for a given stock ticker symbol (limited to the US stock market). It retrieves the following financial statements for a specified stock:
+This code is a Python script that scrapes financial statements from the website stockanalysis.com for a given stock ticker symbol (limited to the **US stock market**). It retrieves the following financial statements for a specified stock:
 
 - Income Statement: Annually and Quarterly (the most recent available)
 - Balance Sheet: Annually and Quarterly (the most recent available)
@@ -27,4 +27,4 @@ For example, the default URLs for the `urls` dictionary are set as follows:
 
 **Note:** You may need to install the required libraries (`requests`, `BeautifulSoup`, `pandas`, `xlsxwriter`) before running this code.
 
-P.s: I particularly use this for company valuation with FCF, DCF methods. Will convert this into a small desktop app in the future. Open to any commits and changes. :) 
+P.s: I particularly use this for company valuation with FCF, DCF methods. Will convert this into a small desktop app in the future. Don't be shy to ask any question (literally everything). Open to any commits and changes. :) 
