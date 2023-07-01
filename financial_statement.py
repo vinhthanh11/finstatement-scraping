@@ -14,7 +14,7 @@ headers= {
 }
 
 #Ticker Symbol (US Stock Market only)
-ticker = 'AI'
+ticker = 'ai'
 
 #Folder path to save the excel file (modify accordingly to your preference)
 folderpath = 'Financial Statements'
