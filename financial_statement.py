@@ -13,8 +13,10 @@ headers= {
     'Cache-Control': 'max-age=0'
 }
 
-#Ticker Symbol (US Stock Market only)
-ticker = 'ai'
+# Ticker Symbol (US Stock Market only). 
+# Remember to make it all lowercase because the website only is case sensitive. 
+# You will get redirected to the annual statement page instead of the quarterly statement page if you don't make it all lowercase.
+ticker = 'ai'.lower()
 
 #Folder path to save the excel file (modify accordingly to your preference)
 folderpath = 'Financial Statements'
