@@ -14,6 +14,7 @@ headers= {
 }
 
 ticker = 'AI'
+folderpath = 'Financial Statements'
 
 urls = {}
 urls['Income Annually'] = f"https://stockanalysis.com/stocks/{ticker}/financials/"
@@ -29,7 +30,7 @@ urls['Ratio Quarterly'] = f"https://stockanalysis.com/stocks/aapl/financials/rat
 current_directory = os.getcwd()
 
 # Specify the relative directory
-relative_directory = os.path.join(current_directory, '..', 'Financial Statements')
+relative_directory = os.path.join(current_directory, '..', '{folderpath}')
 
 # Make sure the directory exists
 os.makedirs(relative_directory, exist_ok=True)
