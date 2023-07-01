@@ -30,7 +30,7 @@ urls['Ratio Quarterly'] = f"https://stockanalysis.com/stocks/aapl/financials/rat
 current_directory = os.getcwd()
 
 # Specify the relative directory
-relative_directory = os.path.join(current_directory, '..', '{folderpath}')
+relative_directory = os.path.join(current_directory, '..', folderpath)
 
 # Make sure the directory exists
 os.makedirs(relative_directory, exist_ok=True)
