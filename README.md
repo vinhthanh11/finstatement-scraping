@@ -1,4 +1,4 @@
-## Financial Statements Scraper
+## Financial Statements Scraper (5 years at most)
 
 This code is a Python script that scrapes financial statements from the website stockanalysis.com for a given stock ticker symbol (limited to the **US stock market**). It retrieves the following financial statements for a specified stock:
 
