@@ -27,4 +27,4 @@ For example, the default URLs for the `urls` dictionary are set as follows:
 
 **Note:** You may need to install the required libraries (`requests`, `BeautifulSoup`, `pandas`, `xlsxwriter`) before running this code.
 
-P.s: I particularly use this for company valuation with FCF, DCF methods. Will convert this into a small desktop app in the future. Don't be shy to ask any question (literally everything). Open to any commits and changes. :) 
+P.s: I particularly use this for company valuation with FCF, DCF methods.  Open to any commits and changes. :) 
